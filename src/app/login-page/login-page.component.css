@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 100px auto;
+}
+
+p {
+  font-weight: 200;
+  font-size: 30px
+}
+
+button {
+  width: 200px;
+  margin: auto;
+}

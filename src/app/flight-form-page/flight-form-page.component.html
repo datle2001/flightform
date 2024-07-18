@@ -1,0 +1,37 @@
+<form>
+  <h1>Flight Form</h1>
+  <mat-form-field>
+    <mat-label>Airline</mat-label>
+    <input matInput [(ngModel)]="flightService.flightInfoPayload.airline" name="airline"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Arrival date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="flightService.flightInfoPayload.arrivalDate" name="arrival-date"/>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Arrival time</mat-label>
+    <input matInput type="time" [(ngModel)]="flightService.flightInfoPayload.arrivalTime" name="arrival-time"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Flight number</mat-label>
+    <input matInput [(ngModel)]="flightService.flightInfoPayload.flightNumber" name="flight-number"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Number of guests</mat-label>
+    <input type="number" matInput  [(ngModel)]="flightService.flightInfoPayload.numOfGuests" name="number-of-guests" min="0"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Comments</mat-label>
+    <textarea matInput [(ngModel)]="flightService.flightInfoPayload.comments" name="comments"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button type="button" [disabled]="!isReadyToSubmit()" (click)="onSubmit()">Submit</button>
+</form>

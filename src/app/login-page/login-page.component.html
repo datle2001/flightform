@@ -1,0 +1,15 @@
+<form>
+  <p>Login</p>
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="loginService.loginInfo.username" name="username"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="loginService.loginInfo.password" name="password"/>
+  </mat-form-field>
+
+  <button mat-raised-button type="button" (click)="onLoginButtonClick()" [disabled]="shouldButtonDisabled()">Login</button>
+</form>
