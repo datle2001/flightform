@@ -1,13 +1,14 @@
 <form>
   <h1>Flight Form</h1>
+  <mat-error>Fields marked with asterisk (*) are required</mat-error>
   <mat-form-field>
     <mat-label>Airline</mat-label>
-    <input matInput [(ngModel)]="flightService.flightInfoPayload.airline" name="airline"/>
+    <input matInput [(ngModel)]="flightService.flightInfoPayload.airline" name="airline" required/>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Arrival date</mat-label>
-    <input matInput [matDatepicker]="picker" [(ngModel)]="flightService.flightInfoPayload.arrivalDate" name="arrival-date"/>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="flightService.flightInfoPayload.arrivalDate" name="arrival-date" required/>
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -15,17 +16,17 @@
 
   <mat-form-field>
     <mat-label>Arrival time</mat-label>
-    <input matInput type="time" [(ngModel)]="flightService.flightInfoPayload.arrivalTime" name="arrival-time"/>
+    <input matInput type="time" [(ngModel)]="flightService.flightInfoPayload.arrivalTime" name="arrival-time" required/>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Flight number</mat-label>
-    <input matInput [(ngModel)]="flightService.flightInfoPayload.flightNumber" name="flight-number"/>
+    <input matInput [(ngModel)]="flightService.flightInfoPayload.flightNumber" name="flight-number" required/>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Number of guests</mat-label>
-    <input type="number" matInput  [(ngModel)]="flightService.flightInfoPayload.numOfGuests" name="number-of-guests" min="0"/>
+    <input type="number" matInput  [(ngModel)]="flightService.flightInfoPayload.numOfGuests" name="number-of-guests" min="0" required/>
   </mat-form-field>
 
   <mat-form-field>

@@ -4,6 +4,9 @@ form {
   width: 400px;
   margin: 100px auto;
 }
+mat-error {
+  margin-bottom: 20px;
+}
 
 h1 {
   font-weight: 200;
